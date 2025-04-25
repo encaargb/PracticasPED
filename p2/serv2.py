@@ -21,7 +21,7 @@ with open(pipe_in, 'r') as pipe_read:
     pipe_read.read()  # No usamos el contenido, solo activamos la respuesta
 
 # Obtener fecha y hora en formato estándar ISO
-fecha_hora = datetime.now().isoformat()
+fecha_hora = datetime.now().replace(microsecond=0).isoformat()
 
 # Enviar la fecha y hora al cliente
 with open(pipe_out, 'w') as pipe_write:
