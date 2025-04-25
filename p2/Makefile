@@ -1,8 +1,8 @@
-servidor:
-	python3 servidor.py
+server:
+	python3 serv2.py
 
-cliente:
-	python3 cliente.py
+client:
+	python3 cli2.py
 
 all:
 	@echo "Compilación y ejecución de la práctica"
