@@ -12,6 +12,16 @@ class BowlingGameTest(unittest.TestCase):  # Creamos una clase de test que hered
         rolls = [1] * 20 # Simulamos 20 tiros, todos 1
         self.assertEqual(game.score(rolls), 20) # Esperamos que el resultado sea 20 (1 por tiro, 20 tiros)
 
+    def test_one_spare(self): # Test de spare
+        game = BowlingGame()
+        # Simulamos una partida con:
+        # Ronda 1: 5 + 5 → spare → bonus = siguiente tiro (3)
+        # Ronda 2: 3 + 0
+        # Total esperado: 10 + 3 (bonus) + 3 = 16
+        rolls = [5, 5, 3] + [0] * 17  # 20 tiros en total
+        self.assertEqual(game.score(rolls), 16)
+        
+
 
 
 # Esto permite ejecutar el test si lanzamos este archivo directamente
