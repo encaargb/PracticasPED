@@ -35,6 +35,25 @@ class BowlingGameTest(unittest.TestCase):  # Creamos una clase de test que hered
         # 12 strikes: 10 normales + 2 bonus en la última ronda
         rolls = [10] * 12
         self.assertEqual(game.score(rolls), 300)
+        '''Ronda 1: strike → 10 + 10 + 10 = 30
+        Ronda 2: strike → 10 + 10 + 10 = 30
+        Ronda 3: strike → 10 + 10 + 10 = 30
+        Ronda 4: strike → 10 + 10 + 10 = 30
+        Ronda 5: strike → 10 + 10 + 10 = 30
+        Ronda 6: strike → 10 + 10 + 10 = 30
+        Ronda 7: strike → 10 + 10 + 10 = 30
+        Ronda 8: strike → 10 + 10 + 10 = 30
+        Ronda 9: strike → 10 + 10 + 10 = 30
+        Ronda 10: strike → 10 + 10 + 10 = 30
+        Total: 30 * 10 = 300'''
+    
+    def test_spare_followed_by_strike(self): # Test de spare seguido de strike
+        game = BowlingGame()
+        rolls = [5, 5, 10, 3, 4] + [0] * 14
+        self.assertEqual(game.score(rolls), 44)
+
+
+
 
 
 
