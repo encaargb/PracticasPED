@@ -30,6 +30,11 @@ class BowlingGameTest(unittest.TestCase):  # Creamos una clase de test que hered
         Ronda 2: 3 + 4 = 7
         Total: 17 + 7 = 24'''
 
+    def test_perfect_game(self):
+        game = BowlingGame()
+        # 12 strikes: 10 normales + 2 bonus en la última ronda
+        rolls = [10] * 12
+        self.assertEqual(game.score(rolls), 300)
 
 
 
