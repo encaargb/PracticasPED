@@ -82,9 +82,6 @@ class BowlingGameTest(unittest.TestCase):  # Creamos una clase de test que hered
         Total: 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 17 = 17'''
 
 
-
-
-
 # Esto permite ejecutar el test si lanzamos este archivo directamente
 if __name__ == '__main__':
     unittest.main()
