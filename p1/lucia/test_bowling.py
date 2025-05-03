@@ -65,7 +65,21 @@ class BowlingGameTest(unittest.TestCase):  # Creamos una clase de test que hered
         Ronda 3: 3 + 0 = 3
         Total: 20 + 13 + 3 = 36'''
 
-
+    def test_spare_in_last_frame(self):
+        game = BowlingGame()
+        rolls = [0] * 18 + [5, 5, 7]
+        self.assertEqual(game.score(rolls), 17)
+        '''Ronda 1: 0 + 0 = 0
+        Ronda 2: 0 + 0 = 0
+        Ronda 3: 0 + 0 = 0
+        Ronda 4: 0 + 0 = 0
+        Ronda 5: 0 + 0 = 0
+        Ronda 6: 0 + 0 = 0
+        Ronda 7: 0 + 0 = 0  
+        Ronda 8: 0 + 0 = 0
+        Ronda 9: 0 + 0 = 0
+        Ronda 10: spare → 5 + 5 = 10 + 7 (bonus) = 17
+        Total: 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 17 = 17'''
 
 
 
