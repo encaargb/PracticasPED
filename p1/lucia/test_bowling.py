@@ -21,6 +21,15 @@ class BowlingGameTest(unittest.TestCase):  # Creamos una clase de test que hered
         rolls = [5, 5, 3] + [0] * 17  # 20 tiros en total
         self.assertEqual(game.score(rolls), 16)
         
+    def test_one_strike(self):
+        game = BowlingGame()
+        # Strike: primer tiro es 10 → bonus = 3 + 4
+        rolls = [10, 3, 4] + [0] * 17
+        self.assertEqual(game.score(rolls), 24) 
+        '''Ronda 1: strike → 10 + 3 + 4 = 17
+        Ronda 2: 3 + 4 = 7
+        Total: 17 + 7 = 24'''
+
 
 
 
