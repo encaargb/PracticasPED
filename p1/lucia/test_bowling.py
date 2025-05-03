@@ -7,6 +7,10 @@ class BowlingGameTest(unittest.TestCase):  # Creamos una clase de test que hered
         rolls = [0] * 20                   # Simulamos 20 tiros, todos 0 (una partida entera)
         self.assertEqual(game.score(rolls), 0)  # Esperamos que el resultado sea 0
 
+    def test_score_all_ones(self):
+        game = BowlingGame()
+        rolls = [1] * 20 # Simulamos 20 tiros, todos 1
+        self.assertEqual(game.score(rolls), 20) # Esperamos que el resultado sea 20 (1 por tiro, 20 tiros)
 
 
 
