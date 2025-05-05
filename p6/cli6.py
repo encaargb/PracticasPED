@@ -14,6 +14,10 @@ try:
     cliente.connect((IP, PUERTO))
 
     ruta = input("Introduce la ruta del fichero: ")
+    if not ruta:
+        print("[cli6] Ruta vacía, no se envía nada al servidor.")
+        cliente.close()
+        exit()
     cliente.sendall(ruta.encode())
 
     respuesta = cliente.recv(4096).decode()
