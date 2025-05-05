@@ -10,7 +10,6 @@ SOCKET_PATH = os.environ.get("SOCKET_PATH", "/tmp/socket_grupo12")
 ruta = input("Introduce la ruta del fichero: ")
 if not ruta:
     print("[cli4] Ruta vacía, no se envía nada al servidor.")
-    cliente.close()
     exit()
 
 cliente = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
