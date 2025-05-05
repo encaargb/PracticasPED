@@ -25,9 +25,16 @@ try:
         path = conexion.recv(1024).decode()
 
         try:
-            f = open(path, "r")
+            f = open(path, "rb")  # Abrimos en binario
             contenido = f.read()
             f.close()
+
+             # Intentamos convertir a texto
+            try:
+                contenido = contenido.decode()
+            except:
+                contenido = "[Fichero binario: no se puede mostrar como texto]"
+                
         except Exception as e:
             contenido = f"ERROR: {e}"
 
