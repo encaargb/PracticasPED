@@ -6,8 +6,8 @@ import setproctitle
 # Nombre del proceso
 setproctitle.setproctitle("serv5")
 
-# Puerto personalizado para tu grupo (por ejemplo 12345)
-PUERTO = 12345
+# Puerto personalizado para tu grupo (por ejemplo 11111)
+PUERTO = 11111
 
 # Crear socket UDP (IPv4)
 servidor = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

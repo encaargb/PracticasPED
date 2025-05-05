@@ -7,7 +7,7 @@ setproctitle.setproctitle("cli5")
 
 # Dirección y puerto del servidor
 SERVIDOR = "localhost"
-PUERTO = 12345
+PUERTO = 11111
 
 # Crear socket UDP (IPv4)
 cliente = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
