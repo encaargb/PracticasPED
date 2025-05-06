@@ -18,8 +18,15 @@ try:
     cliente.connect(SOCKET_PATH)
     cliente.sendall(ruta.encode())
 
-    respuesta = cliente.recv(4096).decode()
-    print("Respuesta del servidor:\n", respuesta)
+    # Bucle para recibir todo el contenido
+    datos = b""
+    while True:
+        parte = cliente.recv(1024)
+        if not parte:
+            break
+        datos += parte
+
+    print("Respuesta del servidor:\n", datos.decode())
 
 except Exception as e:
     print(f"[cli4] ERROR al conectarse: {e}")
