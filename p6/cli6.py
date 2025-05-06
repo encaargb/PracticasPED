@@ -20,9 +20,16 @@ try:
         exit()
     cliente.sendall(ruta.encode())
 
-    respuesta = cliente.recv(4096).decode()
-    print("Contenido recibido:\n", respuesta)
-
+    # Bucle para recibir todo el contenido del servidor
+    datos = b""
+    while True:
+        parte = cliente.recv(1024)
+        if not parte:
+            break
+        datos += parte    
+    
+    print("Contenido recibido:\n", datos.decode())
+    
 except Exception as e:
     print(f"[cli6] Error de conexión o recepción: {e}")
 
