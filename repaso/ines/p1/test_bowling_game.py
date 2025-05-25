@@ -8,3 +8,8 @@ class TestBowlingGame(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+def test_roll_zero_keeps_score_zero(self):
+    game = BowlingGame()
+    game.roll(0)
+    self.assertEqual(game.score(), 0)
