@@ -1,10 +1,4 @@
-import sys
-import os
 import unittest
-
-# Añadir el directorio src al path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from bowling_game import BowlingGame
 
 class TestBowlingGame(unittest.TestCase):
